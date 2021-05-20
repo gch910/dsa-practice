@@ -48,6 +48,6 @@ tree.insert(9)
 tree.insert(15)
 tree.insert(50)
 tree.insert(10)
-print(tree.find(72))
+# print(tree.find(72))
 
         
