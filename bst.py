@@ -40,14 +40,14 @@ class BST:
         return False
                 
 
-tree = BST()
+# tree = BST()
 
-tree.insert(12)
-tree.insert(23)
-tree.insert(9)
-tree.insert(15)
-tree.insert(50)
-tree.insert(10)
-print(tree.find(72))
+# tree.insert(12)
+# tree.insert(23)
+# tree.insert(9)
+# tree.insert(15)
+# tree.insert(50)
+# tree.insert(10)
+# print(tree.find(72))
 
         
