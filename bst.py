@@ -42,21 +42,12 @@ class BST:
 
 # tree = BST()
 
-<<<<<<< HEAD
-# tree.insert(12)
-# tree.insert(23)
-# tree.insert(9)
-# tree.insert(15)
-# tree.insert(50)
-# tree.insert(10)
-=======
 tree.insert(12)
 tree.insert(23)
 tree.insert(9)
 tree.insert(15)
 tree.insert(50)
 tree.insert(10)
->>>>>>> aad3d285681b56dee066d9a153d93834ef2785d6
 # print(tree.find(72))
 
         

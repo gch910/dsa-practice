@@ -49,6 +49,15 @@ class Tree {
     return visited;
   }
 
+  inOrder(current = this.root, visited = []) {
+    if(!current) return;
+    if(current.left) this.inOrder(current.left, visited)
+    visited.push(current.val)
+    if(current.right) this.inOrder(current.right, visited)
+
+    return visited
+  }
+
   // postOrderIter() {
   //   const stack = [this.root]
   //   const visited = []
@@ -87,7 +96,16 @@ tree.root.right.right.right = new Node(10);
 
 tree.root.left.left.left = new Node(24);
 
+// tree.root = new Node(10)
+// tree.root.left = new Node(6)
+// tree.root.left.left = new Node(3)
+// tree.root.left.right = new Node(8)
+// tree.root.right = new Node(15)
+// tree.root.right.right = new Node(20)
+
 // console.log(tree.preOrder());
 console.log(tree.preOrderIter());
 
 console.log(tree.postOrder());
+
+console.log(tree.inOrder());
