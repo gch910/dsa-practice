@@ -1,3 +1,3 @@
-// console.log("a".charCodeAt(0))
+const someFunc = () => console.log("this is the function");
 
-console.log(4 % 10)
+module.exports = someFunc 
