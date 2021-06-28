@@ -25,16 +25,57 @@ class Graph {
   }
 
   //we can return data other than a set but this is the idea
-  dftRecursive(start, visited = new Set()) {
+  dftRecursive(start, visited = new Set(), values = []) {
     if (visited.has(start)) return;
     visited.add(start);
+    values.push(start);
     this.adjList[start].forEach((val) => {
       if (!visited.has(val)) {
-        this.dftRecursive(val, visited);
+        this.dftRecursive(val, visited, values);
       }
     });
+  }
 
-    return visited;
+  bftIterative(start) {
+    const queue = [start];
+    const visited = new Set();
+    const vertices = [];
+
+    while (queue.length) {
+      let current = queue.shift();
+
+      if (visited.has(current)) continue;
+
+      visited.add(current);
+      vertices.push(current);
+
+      for (let val of this.adjList[current]) {
+        queue.push(val);
+      }
+    }
+
+    return vertices;
+  }
+
+  dftIterative(start) {
+    const visited = new Set();
+    const values = [];
+    const stack = [start];
+
+    let current;
+
+    while (stack.length) {
+      current = stack.pop();
+      if (!visited.has(current)) {
+        visited.add(current);
+        values.push(current);
+
+        this.adjList[current].forEach((val) => {
+          stack.push(val);
+        });
+      } else continue;
+    }
+    return values;
   }
 }
 
@@ -53,7 +94,8 @@ graph.addEdge(node2.value, node3.value);
 graph.addEdge(node1.value, node2.value);
 graph.addEdge(node1.value, node3.value);
 
-console.log(graph.dftRecursive("Hello"));
+console.log(graph.bftIterative("Hello"));
 console.log(graph.adjList);
+
 
 module.exports = graph;
